@@ -1,0 +1,11 @@
+# Environment Variables
+.env
+
+# venv configuration
+pyvenv.cfg
+
+# Directoreis
+lib
+Include
+Scripts
+ela_usage

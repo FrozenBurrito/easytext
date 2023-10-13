@@ -2,14 +2,15 @@ import argparse
 import openai
 import os
 import re
+import unicodedata
 from dotenv import load_dotenv
 from pathlib import Path
-import unicodedata
 
 # load .env file
 load_dotenv()
 
 # read command line argument, get input filename
+# see also https://stackoverflow.com/questions/30750843/python-3-unicodedecodeerror-charmap-codec-cant-decode-byte-0x9d
 parser = argparse.ArgumentParser('easytext.py')
 parser.add_argument('input_filename', help='Path to input text file.', type=argparse.FileType('r', encoding='utf8', errors='ignore'))
 args = parser.parse_args()
@@ -20,15 +21,10 @@ input_filename = args.input_filename
 fulltext = input_filename.read()
 fulltext = re.sub(r'\n\n+', '\n\n', fulltext).strip()
 fulltext = unicodedata.normalize('NFKD', fulltext).encode('ascii','ignore')
-#fulltext = re.sub(r'—', '-', fulltext).strip()
-#fulltext = re.sub(r'’', '\'', fulltext).strip()
-#fulltext = re.sub(r'“', '\"', fulltext).strip()
-#fulltext = re.sub(r'”', '\"', fulltext).strip()
 
 paragraphs = []
 for paragraph in fulltext.decode().split("\n\n"):
     paragraphs.append( re.sub(r'\n', ' ', paragraph).strip() )
-
 #paragraphs = fulltext.split("\n\n")
 #for paragraph in fulltext.split("\n\n"):
     #paragraphs.append(' '.join(paragraph.splitlines()))
@@ -41,7 +37,7 @@ for paragraph in fulltext.decode().split("\n\n"):
 # 4) add support for other AI endpoints
 openai.organization = os.getenv('OPENAI_ORG_ID')
 openai.api_key = os.getenv('OPENAI_API_KEY')
-prompt = os.getenv('PROMPT2')
+prompt = os.getenv('PROMPT')
 paraphrased = []
 for i, p in enumerate(paragraphs):
     print("Req paraphrase for paragraph", str(i+1), "of", str(len(paragraphs)))
@@ -51,9 +47,10 @@ for i, p in enumerate(paragraphs):
 
 # create readme.md file with side-by-side table
 # todo items: 
-# 1) write rows after X paragraphs processed by endpoint
-# 2) on CTRL+C, dump & write current output
-# 3) option to begin processing at a specific paragraph number (error recovery)
+# 1) title extraction from paragraphs[0]
+# 2) write rows after X paragraphs processed by endpoint
+# 3) on CTRL+C, dump & write current output
+# 4) option to begin processing at a specific paragraph number (error recovery)
 md_row_headings = "|Para.|Main Text|Paraphrased|\n" 
 md_row_sep = "|:-:|:----------|:----------|\n"
 #output_filepath_str = "output" + "\\" + Path(input_filename.name).resolve().stem + '.md'

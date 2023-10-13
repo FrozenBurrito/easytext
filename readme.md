@@ -1,44 +1,44 @@
 # easytext.py
 
-A simple python script to quickly create adapted versions of texts (plain language, paraphrased, reduced reading level) using OpenAI's API. Creates markdown file showing paragraph numbers and main text side-by-side with plain language version. Output can be quickly converted to a Google Doc.
+A simple python script to quickly create adapted versions of texts (plain language, paraphrased, reduced reading level) using OpenAI's API.  
 
 ## Description
 
-* easytext.py is a simple python script which uses OpenAI's API endpoint to shift the creation of adapted texts (plain language, paraphrased, reduced reading level) from a **high impact, high teacher effort** strategy to a **high impact, low teacher effort** strategy.
-    * Input: text file (.txt) with paragraphs separated by blank lines (\n\n)
-    * Output: markdown file (.md) with paragraph numbers, main text displayed side-by-side with paraphrased version
-        * Note that paragraph numbers are an important text feature for supporting speaking and listening activities.
-    * Connects to OpenAI's API endpoints (OpenAI API Key required to use)
+* Providing adapted texts is an educational practice grounded in the SIOP Model, Krashen's Theories, and UDL.  See Educational Rationale section below for more information.
+* easytext.py is a python script which uses OpenAI's API endpoint to shift the creation of adapted texts (plain language, paraphrased, reduced reading level) from a **high impact, high teacher effort** strategy to a **high impact, low teacher effort** strategy.
+* Input: text file (.txt) with paragraphs separated by blank lines (\n\n)
+* Output: markdown file (.md) showing main text displayed side-by-side with paraphrased version and paragraph numbers.
+    * Note that paragraph numbers are an important text feature for supporting speaking and listening activities.
+    * Output can be quickly converted to a Google Doc by pasting rendered markdown input a Google Doc.
+* Connects to OpenAI's API endpoints (OpenAI API Key required to use)
 
 ## Educational Rationale
 
-* SIOP Model's emphasis on providing adapted texts   
-    * [SIOP = Sheltered Instruction Observation Protocol](https://www.cal.org/siop/about/)
+Providing adapted texts is an educational practice grounded in the SIOP Model, Krashen's Theories, and UDL.
+
+* [SIOP Model = Sheltered Instruction Observation Protocol](https://www.cal.org/siop/about/)
+    * What is SIOP?
+        * A research-based framework for supporting English Learners (ELs). 
+        * Used in California English Language Learner authorization courses, required for a CA clear teaching credential.
+        * Model suggests that these strategies are beneficial for all students, not just ELs.
         * See [*Making Content Comprehensible for English Leaners*](https://www.amazon.com/Making-Content-Comprehensible-English-Learners/dp/0134045238)
-        * A research-based framework for supporting English Learners (ELs) which incorporates many high-impact strategies ELs (particularly newcomers).
-        * Used in California English Language Learner authorization courses, required for a clear teaching credential.
-        * Model emphasizes that strategies are beneficial for all students, not just ELs.
-    * Emphasis on Providing Adapted Texts
-        * Providing adapted texts is one of the most impactful strategies (comprehensible input is essential)
+
+    * SIOP Model's Emphasis on Providing Adapted Texts
+        * Providing adapted texts is one of the most impactful strategies (comprehensible input is essential).
         * Noted in [*Making Content Comprehensible for English Leaners*](https://www.amazon.com/Making-Content-Comprehensible-English-Learners/dp/0134045238) as a high impact, high teacher effort strategy.
             * High impact, but not time efficient.  Creating adapted texts is very time consuming.  
-        * Pre-made adapted texts are often not available.
-            * Adapted texts are sometimes available through online learning platforms, such as [NewsELA](https://newsela.org).
-            * However, NewsELA is largely subscription based and most texts are not available.  
+            * Adapted texts have limited availability through online platforms.
 
-* Connection to Krashen's Theories of Language Acquisition
-    * According to Krashen's theories, providing comprehensible input is extremely important for language acquisition.
+* Krashen's Theories of Language Acquisition
+    * Argues that providing comprehensible input is extremely important for language acquisition.
     * [Krashen's Acquisition-Learning Hypothesis](https://en.wikipedia.org/wiki/Input_hypothesis#Acquisition-learning_hypothesis)
     * [Krashen's Input Hypothes.is](https://en.wikipedia.org/wiki/Input_hypothesis#Input_hypothesis)
-        * Notes that exposure to engaging understandable texts in the target language is a more effective way of developing grammar and convention skills, rather than rote grammar instruction.
+        * Exposure to engaging understandable texts in the target language is a more effective way of developing grammar and convention skills, rather than traditional grammar instruction.
 
 * [UDL = Universal Design for Learning](https://udlguidelines.cast.org/)
     * Providing adapted texts is related to [UDL Checkpoint 8.2](https://udlguidelines.cast.org/engagement/effort-persistence/demands-resources-challenge), [UDL Checkpoint 1.1](https://udlguidelines.cast.org/representation/perception/customize-display), and possibly others.
-    * There is some notable overlap between SIOP, UDL, and Krashen's theories.
 
-* Plain Language Movement
-    * This is tangentially related to the [US Government's Plain Language Movement](https://www.plainlanguage.gov/)
-    * See also [Simple Wikipedia](https://simple.wikipedia.org/) 
+* See also [US Government's Plain Language Movement](https://www.plainlanguage.gov/) and [Simple Wikipedia](https://simple.wikipedia.org/) 
 
 ## Screenshot
 
@@ -96,10 +96,9 @@ Jon Morris, [frozenburrito](https://github.com/frozenburrito)
 * [SIOP Model](https://www.cal.org/siop/about/)
     * [Making Content Comprehensible for ELs](https://www.amazon.com/Making-Content-Comprehensible-English-Learners/dp/0134045238)
 * [Teaching with Comprehensible Input](https://ellevationeducation.com/blog/teaching-comprehensible-input-definition-examples)
-    * Note: The comments reference the exact problem that this script seeks to address.
+    * Note: Comments reference the exact problem that this script seeks to address.
+* [How to convert a markdown (.md) file into a Google Doc](https://stackoverflow.com/questions/56820220/convert-a-markdown-text-file-into-a-google-document-using-appscript)
+* [Pandoc: Convert markdown (.md) files to PDF, DOCX, and other formats](https://pandoc.org/)
 * [US Government's Plain Language Movement](https://www.plainlanguage.gov/)
 * [Simple Wikipedia](https://simple.wikipedia.org/) 
 * [Project Gutenberg Top 100 EBooks](https://www.gutenberg.org/browse/scores/top#books-last1)
-* [Pandoc: Convert MD to PDF, DOCX, etc.](https://pandoc.org/)
-* [How to convert a markdown file into a Google Doc](https://stackoverflow.com/questions/56820220/convert-a-markdown-text-file-into-a-google-document-using-appscript)
-* [Python 3 Unicode Error: charmap codec cannot decode 0x9d](https://stackoverflow.com/questions/30750843/python-3-unicodedecodeerror-charmap-codec-cant-decode-byte-0x9d)

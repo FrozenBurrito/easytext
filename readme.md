@@ -4,8 +4,8 @@ A simple python script to quickly create adapted versions of texts (plain langua
 
 ## Description
 
-* Providing adapted texts is an educational practice grounded in the SIOP Model, Krashen's Theories, and UDL.  See Educational Rationale section below for more information.
 * easytext.py is a python script which uses OpenAI's API endpoint to shift the creation of adapted texts (plain language, paraphrased, reduced reading level) from a **high impact, high teacher effort** strategy to a **high impact, low teacher effort** strategy.
+* Providing adapted texts is an educational practice grounded in the SIOP Model, Krashen's Theories, and UDL.  See Educational Rationale section below for more information.
 * Input: text file (.txt) with paragraphs separated by blank lines (\n\n)
 * Output: markdown file (.md) showing main text displayed side-by-side with paraphrased version and paragraph numbers.
     * Note that paragraph numbers are an important text feature for supporting speaking and listening activities.

@@ -80,7 +80,7 @@ Rendered version of output markdown (.md) can be pasted directly into Google Doc
 
 ## Authors
 
-Jon Morris, [frozenburrito](https://github.com/frozenburrito)
+J Mo, [frozenburrito](https://github.com/frozenburrito)
 
 ## Ideas for Future Features (To Do List)
 
